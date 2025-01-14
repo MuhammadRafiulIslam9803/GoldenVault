@@ -1,47 +1,55 @@
+// src/app/page.jsx
 import Image from 'next/image';
+import Link from 'next/link';
+import Header from 'src/components/Header/Header';
+
+const products = [
+  { id: 1, name: 'Gold Necklace', price: '$1200', image: '/images/necklace.jpg' },
+  { id: 2, name: 'Gold Ring', price: '$800', image: '/images/ring.jpg' }
+];
 
 export default function Home() {
-  const products = [
-    {
-      id: 1,
-      name: 'Gold Necklace',
-      price: '$1200',
-      description: 'Elegant gold necklace with a modern design.',
-      rating: 4.5,
-      image: '/images/necklace.jpg'
-    },
-    {
-      id: 2,
-      name: 'Gold Ring',
-      price: '$800',
-      description: 'Beautiful gold ring with a classic finish.',
-      rating: 4.7,
-      image: '/images/ring.jpg'
-    },
-    {
-      id: 3,
-      name: 'Gold Bracelet',
-      price: '$950',
-      description: 'Stylish gold bracelet with intricate details.',
-      rating: 4.3,
-      image: '/images/bracelet.jpg'
-    }
-  ];
-
   return (
-    <div>
-      <h1 style={{ textAlign: 'center' }}>Available Products</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px', padding: '20px' }}>
-        {products.map((product) => (
-          <div key={product.id} style={{ border: '1px solid #ddd', borderRadius: '10px', padding: '15px', textAlign: 'center' }}>
-            <Image src={product.image} alt={product.name} width={300} height={300} style={{ borderRadius: '10px' }} />
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <p><strong>{product.price}</strong></p>
-            <p>Rating: ⭐{product.rating}</p>
+    <div className="bg-gray-50 min-h-screen">
+
+      {/* Carousel Section */}
+      <section className="text-center mb-12">
+        <Image
+          src="/images/carousel.jpg"
+          alt="Gold Jewelry Collection"
+          width={800}
+          height={300}
+          className="rounded-lg shadow-lg"
+        />
+      </section>
+
+      {/* Product Grid Section */}
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+        {products.map(product => (
+          <div
+            key={product.id}
+            className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105"
+          >
+            <Image
+              src={product.image}
+              alt={product.name}
+              width={400}
+              height={400}
+              className="w-full h-64 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
+              <p className="text-lg text-gray-600 mb-4">{product.price}</p>
+              <Link
+                href={`/product/${product.id}`}
+                className="inline-block px-4 py-2 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 transition duration-200"
+              >
+                View Details
+              </Link>
+            </div>
           </div>
         ))}
-      </div>
+      </section>
     </div>
   );
 }

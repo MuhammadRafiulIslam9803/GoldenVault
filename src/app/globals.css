@@ -1,21 +1,69 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
+/* globals.css */
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Root container to manage the layout globally */
+.root-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f7fc;
+  width: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Layout for the dashboard page */
+.dashboard-layout {
+  display: flex;
+  width: 100%;
+}
+
+.dashboard-main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 20px;
+  width: 100%;
+}
+
+.content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Default layout for non-dashboard pages */
+.default-layout {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Optional: Add responsiveness */
+@media (max-width: 768px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .dashboard-main {
+    padding: 10px;
+  }
+
+  .content {
+    padding: 10px;
   }
 }
+/* header {
+  display: flex !important;
+  justify-content: space-between !important;
+} */
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif; */
-/* } */

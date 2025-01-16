@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Header = () => {
     return (
-        <header className="flex justify-between items-center p-2 bg-yellow-500 text-black shadow-lg w-full">
+        <header className="flex justify-between items-center px-4 py-2 bg-yellow-500 text-black shadow-lg w-full">
             <div className="text-3xl font-extrabold tracking-widest px-6 py-3 rounded-lg bg-[#FFD700] shadow-lg transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:bg-gradient-to-r from-[#FFD700] to-[#FFA500] relative overflow-hidden group">
                 <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-white to-black group-hover:text-black transition-all duration-500 ease-in-out">
                     AR <span className="font-light">Jewelers</span>

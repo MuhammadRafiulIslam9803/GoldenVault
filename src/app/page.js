@@ -1,8 +1,7 @@
 // src/app/page.jsx
 import Image from 'next/image';
 import Link from 'next/link';
-import Carousel from 'src/components/Carsusel/Carousel';
-import Header from 'src/components/Header/Header';
+import Carousel from 'src/components/Carsusel/Carousel'; 
 
 const products = [
   { id: 1, name: 'Gold Necklace', price: '$1200', image: '/images/necklace.jpg' },

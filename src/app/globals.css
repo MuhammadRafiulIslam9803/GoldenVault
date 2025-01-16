@@ -13,7 +13,14 @@
   min-height: 100vh;
   background-color: #f4f7fc;
   width: 100%;
+  max-width: 1536px; /* Fixed width for larger screens */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding: 0 1rem; /* Adds padding on smaller screens */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Optional shadow for a subtle effect */
+  border-radius: 12px; /* Optional rounded corners for a modern feel */
+  overflow: hidden; /* Prevents content from spilling out */
 }
+
 
 /* Layout for the dashboard page */
 .dashboard-layout {

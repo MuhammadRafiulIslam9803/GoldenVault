@@ -32,7 +32,7 @@ const Carousel = () => {
 
     return (
         <div className="relative text-center mb-12">
-            <div className="absolute top-1/2 left-0 right-0 flex justify-between px-4 py-2 z-10">
+            <div className="absolute top-1/4 left-0 right-0 flex justify-between px-4 py-2 z-10">
                 <button
                     onClick={prevImage}
                     className="px-4 py-2 rounded-lg hover:bg-yellow-700"
@@ -50,7 +50,7 @@ const Carousel = () => {
                         className='text-amber-700 hover:text-white' />
                 </button>
             </div>
-            <div className="absolute top-1/2 left-0 right-0 px-6 py-4 z-10 text-center">
+            <div className="absolute top-2/4 left-0 right-0 px-6 py-4 z-10 text-center">
                 <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-orange-400 to-yellow-600 leading-tight tracking-wide mb-6 drop-shadow-lg">
                     Explore our premium collection of exquisite gold jewelry,
                     <br />

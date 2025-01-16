@@ -1,6 +1,7 @@
 // src/app/page.jsx
 import Image from 'next/image';
 import Link from 'next/link';
+import Carousel from 'src/components/Carsusel/Carousel';
 import Header from 'src/components/Header/Header';
 
 const products = [
@@ -13,15 +14,7 @@ export default function Home() {
     <div className="bg-gray-50 min-h-screen">
 
       {/* Carousel Section */}
-      <section className="text-center mb-12">
-        <Image
-          src="/images/carousel.jpg"
-          alt="Gold Jewelry Collection"
-          width={800}
-          height={300}
-          className="rounded-lg shadow-lg"
-        />
-      </section>
+        <Carousel/>
 
       {/* Product Grid Section */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">

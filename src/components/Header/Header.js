@@ -22,17 +22,17 @@ const Header = () => {
                     <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#FFD700] to-[#FFA500] group-hover:w-full transition-all duration-500 ease-in-out"></span>
                 </Link>
                 <Link
-                    href="/login"
-                    className="relative hover:text-[#FFD700] transition duration-300 ease-in-out group"
-                >
-                    Login
-                    <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#FFD700] to-[#FFA500] group-hover:w-full transition-all duration-500 ease-in-out"></span>
-                </Link>
-                <Link
                     href="/dashboard"
                     className="relative hover:text-[#FFD700] transition duration-300 ease-in-out group"
                 >
                     Dashboard
+                    <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#FFD700] to-[#FFA500] group-hover:w-full transition-all duration-500 ease-in-out"></span>
+                </Link>
+                <Link
+                    href="/login"
+                    className="relative hover:text-[#FFD700] transition duration-300 ease-in-out group"
+                >
+                    Login
                     <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#FFD700] to-[#FFA500] group-hover:w-full transition-all duration-500 ease-in-out"></span>
                 </Link>
             </nav>

@@ -4,9 +4,16 @@ import Link from 'next/link';
 import Carousel from 'src/components/Carsusel/Carousel'; 
 
 const products = [
-  { id: 1, name: 'Gold Necklace', price: '$1200', image: '/images/necklace.jpg' },
-  { id: 2, name: 'Gold Ring', price: '$800', image: '/images/ring.jpg' }
+  { id: 1, name: 'Gold Royal Necklace', price: '$1200', image: '/images/necklace/necklace-1.jpeg' },
+  { id: 2, name: 'Gold Classic Necklace', price: '$1800', image: '/images/necklace/necklace-2.jpeg' },
+  { id: 4, name: 'Gold Luxury Necklace', price: '$2700', image: '/images/necklace/necklace-3.jpeg' },
+  { id: 9, name: 'Gold Mega Necklace', price: '$800', image: '/images/necklace/necklace-4.jpeg' },
+  { id: 5, name: 'Gold Elite Combo Pack', price: '$2799', image: '/images/combo/combo-1.jpeg' },
+  { id: 6, name: 'Gold Elite Combo Pack', price: '$2899', image: '/images/combo/combo-2.jpeg' },
+  { id: 7, name: 'Gold Elite Combo Pack', price: '$2999', image: '/images/combo/combo-3.jpeg' },
+  { id: 8, name: 'Gold Elite Combo Pack', price: '$3599', image: '/images/combo/combo-4.jpeg' },
 ];
+
 
 export default function Home() {
   return (
@@ -16,7 +23,7 @@ export default function Home() {
         <Carousel/>
 
       {/* Product Grid Section */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 px-6">
         {products.map(product => (
           <div
             key={product.id}

@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
-import { useRef, useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const products = [
   { id: 1, name: 'Gold Royal Necklace', price: '$1200', image: '/images/necklace/necklace-1.jpeg', description: 'Elegant and classic royal necklace.' },
@@ -17,13 +17,26 @@ const products = [
 export default function ProductDetails() {
   const { id } = useParams();
   const product = products.find(p => p.id === parseInt(id));
+  const containerRef = useRef(null);
   const imageRef = useRef(null);
+
   const [scale, setScale] = useState(1);
+  const [transformOrigin, setTransformOrigin] = useState('center center');
 
   useEffect(() => {
     const handleWheel = (e) => {
-      if (imageRef.current && imageRef.current.contains(e.target)) {
+      if (containerRef.current && containerRef.current.contains(e.target)) {
         e.preventDefault();
+
+        const rect = containerRef.current.getBoundingClientRect();
+        const offsetX = e.clientX - rect.left;
+        const offsetY = e.clientY - rect.top;
+
+        // Mouse position (% based) inside the image container
+        const originX = (offsetX / rect.width) * 100;
+        const originY = (offsetY / rect.height) * 100;
+        setTransformOrigin(`${originX}% ${originY}%`);
+
         const delta = e.deltaY > 0 ? -0.1 : 0.1;
         setScale(prev => {
           let newScale = prev + delta;
@@ -46,17 +59,19 @@ export default function ProductDetails() {
     <div className="max-w-4xl mx-auto p-6">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         <div
-          ref={imageRef}
-          className="w-full h-[400px] overflow-hidden flex justify-center items-center bg-black"
+          ref={containerRef}
+          className="w-full h-[400px] overflow-hidden bg-black flex items-center justify-center"
         >
           <Image
+            ref={imageRef}
             src={product.image}
             alt={product.name}
             width={800}
             height={600}
             style={{
               transform: `scale(${scale})`,
-              transition: 'transform 0.2s ease-in-out',
+              transformOrigin: transformOrigin,
+              transition: 'transform 0.2s ease-out',
             }}
             className="object-contain max-h-full"
           />
